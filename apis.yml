@@ -1,8 +1,26 @@
 aid: cake
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cake.png
 name: Cake
-description: 'Cake is a company surfaced as a portfolio company of creandum, foundry-group and added to
-  the API Evangelist network as a stub for enrichment. Sector: climate. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Cake (stylized CAKE) is a Stockholm, Sweden based maker of premium,
+  lightweight, high-performance electric motorcycles and mopeds, built around a mission
+  to accelerate the shift to a zero-emission society by combining excitement with
+  responsibility. Its clean-mobility lineup spans commuter models (Makka, Osa), off-road
+  bikes (Kalk, Bukk) and work-focused utility variants. Founded by Stefan Ytterborn
+  and backed by Creandum, CAKE filed for bankruptcy in early 2024 and its brand and
+  IP were acquired by Norway''s Brages Holding AS, which relaunched the company. Cake
+  sells direct to consumers and through dealers at ridecake.com; it is a hardware and
+  e-commerce brand with no public developer API surface.'
 url: https://raw.githubusercontent.com/api-evangelist/cake/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -13,10 +31,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Climate
+- Electric Vehicles
+- Mobility
+- Motorcycles
+- Transportation
+- Sustainability
+- E-commerce
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -24,5 +48,20 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/cake-domain-security.yml
 - type: Website
-  url: https://www.cake.vc
+  url: https://ridecake.com/en-US
+- type: Support
+  url: https://ridecake.com/en-US/service-support
+- type: Blog
+  url: https://ridecake.com/en-US/news
+- type: TermsOfService
+  url: https://ridecake.com/en-US/terms-for-purchasing-of-cake-products
+- type: PrivacyPolicy
+  url: https://ridecake.com/en-US/privacy-policy
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
