@@ -1,0 +1,24 @@
+generated: '2026-08-10'
+method: searched
+source: https://ridecake.com/en-US/food-delivery
+plan_count: 0
+plans: []
+note: >-
+  CAKE markets a "CAKE API" for integrating vehicle data and controls into
+  third-party fleet software (stated verbatim on the :work / food-delivery
+  pages), but publishes no developer plans, no API pricing, no quotas and no
+  commercial terms of any kind for it. The site's pricing surface is retail
+  motorcycle and accessory pricing plus business leasing — not API access.
+  Access to the CAKE API is only reachable through the general contact and
+  partner forms. plan_count is an honest zero; no `Pricing` or `Plans` pointer
+  is wired in apis.yml because there is no published API plan to point at.
+evidence:
+- url: https://ridecake.com/en-US/food-delivery
+  status: 200
+  note: '"All vehicle data and controls can easily be integrated via the CAKE API to third party software."'
+- url: https://ridecake.com/en-US/contact-us
+  status: 200
+  note: General contact form — the only stated route to the API.
+- url: https://ridecake.com/en-US/business-leasing-with-cake
+  status: 200
+  note: Vehicle leasing terms, not API plans.

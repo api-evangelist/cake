@@ -1,0 +1,59 @@
+generated: '2026-08-10'
+method: probed
+source: live HTTP probes of the ridecake.com host
+host: https://ridecake.com
+note: >-
+  Every /.well-known/ path was probed and every one missed. ridecake.com is a
+  Next.js storefront: unknown paths under /.well-known/ return a 404 HTML page
+  and unknown top-level paths return a 500 HTML page. No document was served,
+  so NO WellKnown or SecurityTxt pointer is emitted in apis.yml — this file
+  records a verified absence, not a surface.
+documents:
+- path: /.well-known/security.txt
+  status: 404
+  content_type: text/html
+  file: null
+- path: /.well-known/openid-configuration
+  status: 404
+  content_type: text/html
+  file: null
+- path: /.well-known/oauth-authorization-server
+  status: 404
+  content_type: text/html
+  file: null
+- path: /.well-known/api-catalog
+  status: 404
+  content_type: text/html
+  file: null
+- path: /.well-known/ai-plugin.json
+  status: 404
+  content_type: text/html
+  file: null
+- path: /.well-known/agent-card.json
+  status: 404
+  content_type: text/html
+  file: null
+- path: /.well-known/agent.json
+  status: 404
+  content_type: text/html
+  file: null
+- path: /security.txt
+  status: 500
+  content_type: text/html
+  file: null
+other_hosts_probed:
+- host: app.ridecake.com
+  note: >-
+    Resolves to 13.48.225.212 (AWS eu-north-1) but nothing answers on 443 or 80 —
+    curl exit 28, connection timeout. Reads as a dangling record for the retired
+    CAKE Connect backend.
+- host: api.ridecake.com
+  note: NXDOMAIN
+- host: developer.ridecake.com
+  note: NXDOMAIN
+- host: docs.ridecake.com
+  note: NXDOMAIN
+- host: cakeconnect.com
+  note: >-
+    Not CAKE. Parked-domain lander (200, 114 bytes, JS redirect to /lander);
+    api.cakeconnect.com is wildcard parking DNS with nothing listening.

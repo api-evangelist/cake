@@ -1,0 +1,23 @@
+generated: '2026-08-10'
+method: searched
+source: https://ridecake.com/en-US/food-delivery
+limit_count: 0
+rate_limits: []
+headers: []
+note: >-
+  No rate limits are published for the CAKE API. There is no developer portal,
+  no API reference and no machine-readable contract on any CAKE host, so there
+  is nothing documenting request quotas, windows, burst behaviour, the
+  exhaustion status code, or any RateLimit-* / Retry-After response headers.
+  limit_count is an honest zero recorded from a completed search — NOT a
+  RateLimits surface. No `RateLimits` pointer is wired in apis.yml, because a
+  pointer would assert a runtime rate-limit signal that CAKE does not publish.
+evidence:
+- url: https://ridecake.com/en-US/food-delivery
+  status: 200
+  note: Only page on the site that names the CAKE API; no limits stated.
+- url: https://ridecake.com/openapi.json
+  status: 500
+  note: No spec on the API host root.
+- url: https://ridecake.com/.well-known/api-catalog
+  status: 404

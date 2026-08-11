@@ -19,8 +19,11 @@ description: 'Cake (stylized CAKE) is a Stockholm, Sweden based maker of premium
   bikes (Kalk, Bukk) and work-focused utility variants. Founded by Stefan Ytterborn
   and backed by Creandum, CAKE filed for bankruptcy in early 2024 and its brand and
   IP were acquired by Norway''s Brages Holding AS, which relaunched the company. Cake
-  sells direct to consumers and through dealers at ridecake.com; it is a hardware and
-  e-commerce brand with no public developer API surface.'
+  sells direct to consumers and through dealers at ridecake.com. Its bikes ship with
+  the CAKE Connect module, and CAKE markets a "CAKE API" on its own :work and delivery
+  pages that lets fleet owners pull vehicle data, telemetry and controls into their
+  own fleet software — but that API has no public developer portal, no reference and
+  no machine-readable specification; access runs through the contact and partner forms.'
 url: https://raw.githubusercontent.com/api-evangelist/cake/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -31,7 +34,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-18'
+modified: '2026-08-10'
 tags:
 - Company
 - Climate
@@ -50,6 +53,8 @@ maintainers:
 common:
 - type: DomainSecurity
   url: security/cake-domain-security.yml
+- type: LLMsTxt
+  url: llms/cake-llms.txt
 - type: Website
   url: https://ridecake.com/en-US
 - type: Support
@@ -61,7 +66,28 @@ common:
 - type: PrivacyPolicy
   url: https://ridecake.com/en-US/privacy-policy
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-10'
+  status: minimal
+  artifacts_added: 4
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    CAKE names a "CAKE API" for pulling vehicle data and controls into third-party
+    fleet software on its own :work/food-delivery pages, but ships no developer
+    portal, reference or spec — api.ridecake.com, developer.ridecake.com and
+    docs.ridecake.com are all NXDOMAIN, app.ridecake.com resolves to AWS but refuses
+    connections, and the only stated route to the API is the general contact-us form.
+  evidence:
+  - url: https://ridecake.com/en-US/food-delivery
+    status: 200
+  - url: https://ridecake.com/en-US/contact-us
+    status: 200
+  - url: https://ridecake.com/openapi.json
+    status: 500
+  - url: https://ridecake.com/.well-known/api-catalog
+    status: 404
+  - url: https://ridecake.com/.well-known/agent-card.json
+    status: 404
+  checked: '2026-08-10'
